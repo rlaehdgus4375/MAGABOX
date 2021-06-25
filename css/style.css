@@ -268,13 +268,11 @@
     color: #fff;
 }
 .movie_chart {
-    height: 592px;
     overflow: hidden;
 }
 .movie_chart > div  > div > div {
     float: left;
     width: 292px;
-    height: 592px;
     margin-right: 18px;
 }
 .movie_chart > div  > div > div:last-child {
@@ -410,7 +408,15 @@
     .header { justify-content: flex-start; }
 
     #movie .row { background: #fff; margin: 24px; }
-    #movie { padding: 0; }
+    #movie .ir_so { position: static; width: auto; height: auto; line-height: normal; text-indent: 0; font-size: 24px; font-weight: bold; padding-bottom: 20px; }
+    .movie { padding: 30px 10px; }
+    .movie_title { margin-bottom: 30px; }
+    .movie_title ul { position: relative; padding-bottom: 10px; }
+    .movie_title ul::before { content: ''; position: absolute; z-index: 1; left: 0; bottom: 0; width: 100%; height: 2px; background: #e1e1e1; }
+    .movie_title li { width: auto; border: 0; }
+    .movie_title li a { position: relative; font-size: 18px; color: #666; font-weight: 400; padding: 0; margin-right: 35px; }
+    .movie_title li.active a::before { content: ''; position: absolute; z-index: 2; left: 0; bottom: -10px; width: 100%; height: 2px; background: #666;}
+    .movie_title li.active a { background: none; color: #666; }
 }
 
 @media (max-width: 600px){
@@ -424,6 +430,32 @@
     .banner_menu .bm_right li.white a { font-size: 14px; padding: 3px 5px 5px 5px; color: #fff; background: rgba(0,0,0,0.6); border-color: #fff; }
     .banner_menu .bm_right li.purple a { font-size: 14px; padding: 3px 5px 5px 5px; color: #fff; background: rgba(0,0,0,0.6); border-color: #fff; }
     .swiper-pagination-bullet { width: 13px !important; height: 13px !important; }
+
+    #movie .row { margin: 8px; padding: 16px; }
+    #movie .ir_so { font-size: 18px; padding-bottom: 10px; }
+    .movie_title ul { padding-bottom: 8px; }
+    .movie_title li a { font-size: 14px; margin-right: 20px;}
+    .movie_title li.active a::before { content: ''; position: absolute; z-index: 2; left: 0; bottom: -8px; width: 100%; height: 2px; background: #666;}
+    .movie_chart > div  > div > div .infor h3 { justify-content: center; padding: 5px; }
+    .movie_chart > div  > div > div .infor h3 strong { display: block; font-size: 19px; color: #222; font-weight: 300; }
+    .movie_chart > div  > div > div .infor h3 span { display: none; }
+    .movie_chart > div  > div > div .infor .infor_btn a { 
+        width: 52%; 
+        margin-left: 24%; 
+        display: block; 
+        margin-right: 0; 
+        padding: 5px; 
+        color: #777; 
+        margin-bottom: 5px; 
+        box-sizing: border-box; 
+        font-size: 14px;
+        background: none;
+        border: 1px solid #ddd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    } 
+    .movie_chart > div  > div > div .infor .infor_btn a:last-child { display: none; } 
 }
 
 @media (max-width: 480px){
