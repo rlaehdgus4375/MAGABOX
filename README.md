@@ -4,7 +4,7 @@
 사용 프로그램 : VSCODE
 https://code.visualstudio.com/
 
-스타일 : scss사용
+스타일 : css사용
 
 
 index.html 메인페이지 

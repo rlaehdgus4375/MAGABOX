@@ -403,10 +403,14 @@
 }
 
 @media (max-width: 768px){
+    body { background: #d9d7e0; }
     .row { padding: 0 16px; }
     #mNav { right: 6px; }
     .header h1 strong { display: none; }
     .header { justify-content: flex-start; }
+
+    #movie .row { background: #fff; margin: 24px; }
+    #movie { padding: 0; }
 }
 
 @media (max-width: 600px){
