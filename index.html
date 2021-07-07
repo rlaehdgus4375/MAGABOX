@@ -896,7 +896,7 @@
                     <h2>새로운 영화</h2>
                     <div class="new_left_right">
                         <div class="new_left">
-                            <div class="play">
+                            <div class="play" id="showTrailer" data-youtube="F1239ZePXfM" > 
                                 <!-- 플레이 버튼 만들기 -->
                                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                     viewBox="0 0 120 120" style="enable-background:new 0 0 120 120;" xml:space="preserve">
@@ -992,53 +992,53 @@
                                         <li>
                                             <dl>
                                                 <dt><strong class="bar">전체</strong> <em>2019.05.28</em></dt>
-                                                <dd>[무대인사] 터미네이터6 시즌 발표 및 영상 제작 10주년 기념 라이브 쇼</dd>
+                                                <dd><a href="#">[스마트콘] 시스템 안정화를 위한 서버작업 안내 (6/6)</a></dd>
                                             </dl>
                                         </li>
                                         <li>
                                             <dl>
                                                 <dt><strong class="bar">전체</strong> <em>2019.05.24</em></dt>
-                                                <dd>[무대인사] 터미네이터6 시즌 발표 및 영상 제작 10주년 기념 라이브 쇼</dd>
+                                                <dd><a href="#">메가박스 이용약관 변경 안내</a></dd>
                                             </dl>
                                         </li>
                                         <li>
                                             <dl>
-                                                <dt><strong class="bar">전체</strong> <em>2019.05.28</em></dt>
-                                                <dd>[무대인사] 터미네이터6 시즌 발표 및 영상 제작 10주년 기념 라이브 쇼</dd>
+                                                <dt><strong class="bar">전체</strong> <em>2019.06.23</em></dt>
+                                                <dd><a href="#">SKT 휴대폰 본인인증 서비스 점검 안내(6/24~25, 6/27)</a></dd>
                                             </dl>
                                         </li>
                                         <li>
                                             <dl>
-                                                <dt><strong class="bar">전체</strong> <em>2019.05.28</em></dt>
-                                                <dd>[무대인사] 터미네이터6 시즌 발표 및 영상 제작 10주년 기념 라이브 쇼</dd>
+                                                <dt><strong class="bar">전체</strong> <em>2019.06.11</em></dt>
+                                                <dd><a href="#">[메가박스] 영화 관람요금 변경 안내</a></dd>
                                             </dl>
                                         </li>
                                     </ul>
                                 </li>
                                 <li><a href="#">영화관 공지</a>
-                                    <ul style="display: none;">
+                                    <ul>
                                         <li>
                                             <dl>
-                                                <dt><strong class="bar">안양</strong> <em>2019.05.28</em></dt>
-                                                <dd>[영화인사] 터미네이터6 시즌 발표 및 영상 제작 10주년 기념 라이브 쇼</dd>
+                                                <dt><strong class="bar">검단</strong> <em>2019.07.05</em></dt>
+                                                <dd><a href="#">[검단] 영화 관람요금 변경 안내</a></dd>
                                             </dl>
                                         </li>
                                         <li>
                                             <dl>
-                                                <dt><strong class="bar">인덕원</strong> <em>2019.05.24</em></dt>
-                                                <dd>[영화인사] 터미네이터6 시즌 발표 및 영상 제작 10주년 기념 라이브 쇼</dd>
+                                                <dt><strong class="bar">전주혁신</strong> <em>2019.02.16</em></dt>
+                                                <dd><a href="#">[전주혁신] 주차장 임시 변경 안내</a></dd>
                                             </dl>
                                         </li>
                                         <li>
                                             <dl>
-                                                <dt><strong class="bar">서울</strong> <em>2019.05.28</em></dt>
-                                                <dd>[영화인사] 터미네이터6 시즌 발표 및 영상 제작 10주년 기념 라이브 쇼</dd>
+                                                <dt><strong class="bar">코엑스</strong> <em>2019.03.03</em></dt>
+                                                <dd><a href="#">[코엑스] 더 부티크 상영관 임시 운영 중단 안내</a></dd>
                                             </dl>
                                         </li>
                                         <li>
                                             <dl>
                                                 <dt><strong class="bar">강남</strong> <em>2019.05.28</em></dt>
-                                                <dd>[영화인사] 터미네이터6 시즌 발표 및 영상 제작 10주년 기념 라이브 쇼</dd>
+                                                <dd><a href="#">[영화인사] 터미네이터6 시즌 발표 및 영상 제작 10주년 기념 라이브 쇼</a></dd>
                                             </dl>
                                         </li>
                                     </ul>
@@ -1548,25 +1548,14 @@
     </footer>
     <!-- //footer -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+     <!-- 트레일러 -->
+     <aside id="blackout" class="overlay">
+        <div id="trailerModal" class="modal">
+            <div id="trailer"></div><!-- YouTube 플레이어로 대체되는 부분 -->
+        </div>
+        <button id="hideTrailer" class="modal_close">닫기</button>
+    </aside>
+    <!-- //트레일러 -->
 
 
     <!-- 자바스크립트 라이브러리 -->
@@ -1574,72 +1563,9 @@
     <script src="js/modernizr-custom.js"></script>
     <script src="js/ie-checker.js"></script>
     <script src="js/swiper.min.js"></script>
-    <script>
-        // 배너 이미지 슬라이드
-        var swiper = new Swiper('.swiper-container', {
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                type: 'bullets',
-            },
-            autoplay: {
-                delay: 3500,
-            },
-        });
-
-        // 영화차트 이미지 슬라이드
-        var swiper = new Swiper('.swiper-container2', {
-            slidesPerView: 4,
-            spaceBetween: 24,
-            // mousewheel: {
-            //     invert: true,
-            // },
-            keyboard: {
-                enabled: true,
-                onlyInViewport: false,
-            },
-            autoplay: {
-                delay: 3500,
-            },
-            // 화면의 크기에 따라 슬라이드 보이는 갯수 조절
-            breakpoints: {
-                600: {
-                    slidesPerView:1.4,
-                    spaceBetween:24
-                },
-                768: {
-                    slidesPerView:2,
-                    spaceBetween:24
-                },
-                960: {
-                    slidesPerView:3,
-                    spaceBetween:24
-                },
-            }
-        });
-
-
-
-        // 영화차트 탭 메뉴
-        let movBtn = $('.movie_title > ul > li');
-        let movCont = $('.movie_chart > div');
-
-        movCont.hide().eq(0).show();
-
-        movBtn.click(function(e){
-            e.preventDefault();
-            let target = $(this);
-            let index = target.index();
-            movBtn.removeClass('active');
-            target.addClass('active');
-            // movCont.css('display','none');
-            // movCont.eq(index).css('display','block');
-            movCont.css('display','none');
-            movCont.eq(index).fadeIn(500);
-        });
-    </script>
+    <script src="js/iframe_api.js"></script>
+    <script src="js/movie.js"></script>
+    <script src="js/custom.js"></script>
+    
 </body>
 </html> 
